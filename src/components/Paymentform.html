@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            background-color: #f9f9f9;
+            margin: 0;
+            background-image: -webkit-linear-gradient( 268deg , #26537f 0%, white 100%);
+        }
+        .payment-form {
+            margin-top: 10vh;
+            width: 40vw;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .payment-form h2 {
+            margin-bottom: 20px;
+            font-size: 22px;
+            color: #333;
+        }
+        .amountinput {
+            margin-bottom: 15px;
+        }
+       
+        .amountinput input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .amountinput input[type="number"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        .btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #26537f;
+        }
+        
+    </style>
+    </head>
+    <body>
+    
+    <div class="payment-form">
+        <h2>Make a Payment</h2>
+        
+        <form action="#" novalidate>
+           
+            <div class="amountinput">
+               
+                <input type="number" id="amount" name="amount"   placeholder="Enter amount" required>
+            </div>
+            
+            
+            <button type="submit" class="btn">Pay</button>
+        </form>
+    </div>
