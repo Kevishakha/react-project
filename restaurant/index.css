@@ -1,0 +1,457 @@
+@import url(tailwindcss/base);
+@import url(tailwindcss/components);
+@import url(tailwindcss/utilities);
+@import url(slick-carousel/slick/slick.css);
+@import url(slick-carousel/slick/slick-theme.css);
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body,
+html,
+ul {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+#Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  width: 100%;
+  height: 12vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  z-index: 100;
+}
+.logo-icon {
+  font-size: 32px
+  ;
+  color: white;
+}
+.nav-li{
+  font-size: 1.25rem;
+}
+.logo {
+  height: 32px;
+  width: 150px;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+.center-section {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-ul {
+  display: flex;
+  gap: 2vw;
+  list-style: none;
+}
+
+.nav-ul li {
+  text-decoration: none;
+  color: rgb(189, 187, 187);
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-ul a:hover {
+  color: yellow;
+}
+
+.right-section {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.icon {
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.icon:hover {
+  color: yellow;
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.nav-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.theme-toggle-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+.mode-btn .theme-toggle-button,
+.Cart NavLink,
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle-button:hover {
+  opacity: 0.8;
+}
+
+.hamburger {
+  display: none;
+  height: 40px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1005;
+  cursor: pointer;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 30px;
+  background-color: rgb(189, 187, 187);
+  margin-bottom: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* ----------------------------------------------------------------------hamburger nav------------------------------------------------------------- */
+@media (max-width: 950px) {
+  .hamburger {
+    display: flex;
+    cursor: pointer;
+  }
+  .nav-ul {
+    display: none;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+  }
+  .nav-ul.active {
+    display: flex;
+  }
+
+  .center-nav {
+    height: 75vh;
+    flex-direction: column;
+    top: 0;
+    right: 0;
+    justify-content: flex-end ;
+    gap: 3vh;
+    align-items: center;
+    background: linear-gradient(to right, rgb(213, 81, 44), rgba(255, 0, 0, 0.5));
+  }
+  .center-nav li{
+    padding: 10px;
+  }
+  .right-nav {
+    flex-direction: row;
+    height: 25vh;
+    top: 75vh;
+    right: 0;
+    justify-content: center ;
+    align-items: center;
+    gap: 4vw;
+    background: linear-gradient(to right, rgb(213, 81, 44), rgba(255, 0, 0, 0.5));
+  }
+
+  .nav-ul.right-nav.active {
+    display: flex;
+  }
+ 
+  .nav-li{
+    padding: 5px;
+    font-size: 25px;
+    color: white;
+  }
+  .right-nav .nav-li{
+    padding: 5px;
+    font-size: 50px;
+    color: white;
+  }
+}
+ /* ---------------------------------------------------------------------------- nav li -------------------------------------------------------*/
+
+@media (min-width:950px)and (max-width: 1200px) {
+  .nav-li{
+    color: rgb(189, 187, 187);
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+}
+
+
+
+/* -------------------------------------------------------------------------dark mode--------------------------------------------------------- */
+
+body.dark-mode footer {
+  background-color: #111;
+  color: #dddddd;
+}
+
+body.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.light-navbar {
+  background-color: #ffffff;
+  color: #000000;
+}
+body.dark-mode {
+  background-color: #000000;
+  color: #ffffff;
+}
+.dark-navbar {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+#navbar.light-navbar {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.dark-mode * {
+  background-color: inherit;
+  color: inherit;
+}
+
+/* ============================================================================ footer ============================================*/
+
+
+@keyframes flip{
+  from {
+      opacity: 0;
+     transform: rotateY(90deg);
+     backface-visibility: hidden;
+  }
+  to{
+      opacity: 1;
+      transform: rotateY(0deg);
+      backface-visibility: visible;
+  }
+}
+.flip-Animate {
+  opacity: 1; 
+  animation: flip 1s ease-in;
+  animation-fill-mode: forwards;
+  animation-timeline: view(); 
+  animation-range: entry 10% cover 40%;
+}
+@keyframes flip-infinite{
+  0% {
+    opacity: 0;
+   transform: rotateY(90deg);
+   backface-visibility: hidden;
+}
+50%{
+    opacity: 1;
+    transform: rotateY(0deg);
+    backface-visibility: visible;
+}
+100%{
+  opacity: 0;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+}
+
+.flip-infinite{
+  animation: flip-infinite 2s linear infinite;
+}
+
+@keyframes bounce{
+  0%{
+    transform: translateY(0px);
+  }
+  50%{
+    transform: translateY(20px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+
+.bounce {
+  animation: bounce 5s linear infinite;
+}
+
+
+@keyframes flip-and-bounce {
+  0% {
+    opacity: 0;
+     transform: rotateY(90deg);
+     backface-visibility: hidden;
+  }
+  50% {
+    opacity: 1;
+      transform: rotateY(0deg);
+      backface-visibility: visible;
+  }
+  50% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(-20px);
+  }
+  70% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.flip-and-bounce{
+  animation: flip-and-bounce 5s linear infinite;
+  animation-fill-mode: forwards;
+}
+.pageimg{
+  animation: zoom 10s ease-in-out infinite;
+}
+
+@keyframes zoom {
+  0%, 100% {
+    background-size: 120%;
+  }
+  50% {
+    background-size: 150%;
+  }
+}
+
+
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.scroll-left{
+  animation: scroll-left 20s linear infinite;
+}
+
+
+ /* --------------------------------------------------------------------text-shadow --------------------------------------------------------*/
+
+.text-shadow-subtle {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+.text-shadow-bold {
+
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+.text-shadow-glow {
+  text-shadow: 0 0 8px rgba(123, 120, 120, 0.8), 0 0 15px rgba(253, 253, 253, 0.6);
+}
+
+
+
+
+
+
+
+.gradient-text {
+  background: linear-gradient(90deg, #ff4500, #ffa500, #ff4500);
+  -webkit-text-fill-color: transparent;
+}
+
+.rainbow-text {
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 300%;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 3s linear infinite;
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+.striped-text {
+  font-size: 36px;
+  font-weight: bold;
+  background: repeating-linear-gradient(
+    45deg,
+    #ff4500,
+    #ff4500 10px,
+    #ffa500 10px,
+    #ffa500 20px
+  );
+}
+
+.neon-text {
+  font-weight: bold;
+  text-shadow: 0 0 5px #ff4500, 0 0 10px #ffa500, 0 0 20px #ff4500;
+  animation: neon 2s ease-in-out infinite alternate;
+}
+
+@keyframes neon {
+  0% {
+    text-shadow: 0 0 5px #ff4500, 0 0 10px #ffa500, 0 0 20px #ff4500;
+  }
+  100% {
+    text-shadow: 0 0 10px #ffa500, 0 0 15px #ff4500, 0 0 25px #ffa500;
+  }
+}
+
+.active{
+  color: yellow;
+}
+
+
