@@ -1,0 +1,230 @@
+#fooditem:active {
+  border: 4px solid red;
+  padding: 2px;
+}
+
+.foodItem-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 2px;
+  color: #333;
+}
+.pghead{
+  padding: 2vh;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+  background-color: rgba(0,0,0,0.5);
+}
+
+.foodItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+  background-color: #f8f8f8;
+  text-align: center;
+  width: 200px;
+  height: 300px;
+  margin: 10px;
+}
+
+.foodItem-image {
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.foodItem-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-track .fooditem img{
+  height: 500px;
+box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
+}
+.count-item {
+  height: 4vh;
+  position: absolute;
+  bottom: 5px; 
+  right: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: white;
+  padding: 5px;
+  border-radius: 15px;
+}
+.count-set{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+.count-item div{
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.count-set div{
+  height: 3vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 4px;
+  border-radius: 20px;
+}
+
+/*------------------------------------------------------------------ Component= foodDisplay----------------------------------------------------   */
+.foodDisplayContainer {
+  height: auto;
+  width: 100%;
+  position: relative;
+}
+
+.foodDisplay {
+  height: auto;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  margin: auto;
+}
+
+.displayFoodContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: auto;
+}
+
+
+.sticky-cart-button {
+  position: fixed;
+  bottom: 20px; 
+  right: 5vw;   
+  z-index: 1000;
+  background-color: #FF5722;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+.sticky-cart-button:hover{
+  background-color: red;
+}
+
+
+
+.food-slider-Main {
+  position: relative;
+  overflow: hidden;
+  height: 35vh;
+}
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.carousel-track {
+  display: flex;
+  animation: scroll-left 40s linear infinite ;
+  gap: 5vh;
+}
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+.carousel-item {
+  flex: 0 0 16vw; 
+  margin: 0; 
+  border-radius: 50%;
+  overflow: hidden;
+  flex: 0 0 10vw;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.dots-container {
+  display: flex;
+  position: absolute;
+  bottom: 20px;
+  left: 20px; 
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: gray;
+  cursor: pointer;
+}
+
+.dot.bg-gray-800 {
+  background: black; 
+}
+
+.dot.bg-gray-400 {
+  background: lightgray;
+}
+
+.dots-container {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+
+
+.heart-icon{
+  visibility: hidden;
+  transition: transform 1s ease-in-out;
+}
+.foodItem-image:hover .heart-icon{
+  visibility: visible;
+  animation: slide-top 1s linear;
+}
+
+@keyframes slide-top{
+  0% {
+    transform: translateY(100%);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+
+
