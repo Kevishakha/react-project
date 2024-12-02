@@ -1,0 +1,91 @@
+.category-container {
+  height: auto;
+  width: 100vw;
+  margin: auto;
+  margin-top: 2rem;
+}
+.category-contain {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 2vw;
+  width: 100%;
+  overflow-y: auto;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.category-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.category-images img {
+  width: 100%;
+
+  object-fit: cover;
+  border-radius: 5px;
+}
+.category-images {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.food-item {
+  width: 20vh;
+  height: 20vh;
+  overflow: hidden;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.food-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =============================================================Search bar css=============================================== */
+
+.search-bar {
+  border: 4px solid white;
+  height: 7vh;
+  width: 50vw;
+  padding: 1px;
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
+  border-top-left-radius: 18px;
+  border-bottom-left-radius: 18px;
+}
+.search-bar input {
+  border: none;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.search-bar input:active {
+  border: none;
+}
+
+.search-bar input{
+color: white;
+}
+
